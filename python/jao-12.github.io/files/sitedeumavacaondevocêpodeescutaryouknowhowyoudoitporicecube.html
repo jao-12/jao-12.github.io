@@ -1,0 +1,30 @@
+<img src="skate-vaca.png">
+<audio autoplay loop controls>
+    <source src="Ice Cube - You Know How We Do It.mp3" autoplay loop type="audio/mp3">
+</audio>
+    <body style="background-image: url(skate-vaca.png); background-repeat: no-repeat; background-size: cover;">
+        <!-- Content of your page -->
+         <title>Botão de Música</title>
+</head>
+<body>
+
+<button id="botaoMusica">Tocar Música</button>
+
+<audio id="minhaMusica">
+  <source src="Ice Cube - You Know How We Do It.mp3" type="audio/mpeg">
+  Seu navegador não suporta o elemento de áudio.
+</audio>
+
+<script>
+  const botao = document.getElementById('botaoMusica');
+  const audio = document.getElementById('minhaMusica');
+
+  botao.addEventListener('click', function() {
+    audio.currentTime = 0; // Reinicia a música do começo
+    audio.play(); // Inicia a reprodução do áudio
+  });
+</script>
+
+</body>
+</html>
+    </body>

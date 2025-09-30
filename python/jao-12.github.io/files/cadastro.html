@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="index.html">voltar para index</a>
+
+    <h2>Formulário de Elogios aos Skates</h2>
+    <form action="#" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <label for="telefone">Digite seu telefone</label>
+        <input type="tel" id="telefone" name="telefone" requred><br><br>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="elogio">Deixe seu elogio para nossos skates:</label><br>
+        <textarea id="elogio" name="elogio" rows="5" cols="40" required></textarea><br><br>
+
+        <button type="submit">Enviar Elogio</button>
+    </form>
+
+    <p><strong>Atenção:</strong> Caso haja reclamações, a pessoa responsável irá sumir misteriosamente.</p>
+</body>
+    <center><h1>Pesquisa de produtos</h1></center>
+    <form action="/files/index.html" method="get">
+        <label for ="campo-busca">pesquisar: </label>
+        <input type="search" id="campo-busca" name="q" placeholder="Digite o produto que deseja">
+        <button type="submit">buscar</button>
+    </form>
+    <center><h1>Pesquisa de site</h1></center>
+    <form>
+        <label for="website">Seu website: </label>
+        <input type="url" id="website" name="website" placeholder="digite o site">
+        <button type="submit">Enviar</button>
+    </form>
+    <center><h1>Formulario de idade</h1></center>
+    <form>
+        <label for="idade">Sua idade: </label>
+        <input type="number" id="idade" name="idade" min="18" max="99" step="1" placeholder="Ex: 23 anos">
+        <button type="submit">Enviar</button>
+    </form>
+    <center><h1>Pesquisa de arquivo</h1></center>
+    <form action="/python/jao-12.github.io/files/" method="post" enctype="multipart/form-data">
+        <label for="arquivo">Selecione um arquivo: </label>
+        <input type="file" id="arquivo" name="arquivo" accept="img">
+        <br><br>
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+</html>
