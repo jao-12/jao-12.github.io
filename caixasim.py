@@ -24,7 +24,6 @@ def caixa():
 
     if saque != 0:
         print("Saque invalido")
-        SystemExit
     else:
         print(f'O valor do seu saque foi de: {saque0}\nNotas de 100: {nota100}\nNotas de 50: {nota50}\nNotas de 20: {nota20}\nNotas de 10: {nota10}\n notas de 5: {nota5}\nNotas de 2: {nota2}')
 decisão = ('')
