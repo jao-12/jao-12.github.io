@@ -9,8 +9,18 @@
         <center><h1>Lista de tarefas</h1></center>
         <input type="text" id="tarefa">
         <button id="adicionarTarefa">adicionar</button>
-        <h1><ul id="lista">
-        </ul></h1>
+        <ul id="lista" class="minha-lista">
+        </ul>
+        <style>
+        .minha-lista {
+        display: flex;
+        flex-direction: column; /* deixa os itens empilhados verticalmente */
+        gap: 8px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        }
+</style>
         <p>total de tarefas: <span id="contarTarefas">0</span></p>
         <script>
             function adicionarItem() {
@@ -19,7 +29,7 @@
                 if (inputValor.trim() === "") return;
 
                 var novoItem = document.createElement("novoItem");
-                novoItem.textContent = inputValor;
+                novoItem.textContent = inputValor
 
                 const btnRemover = document.createElement("button");
                 btnRemover.textContent = "apagar";
@@ -35,8 +45,5 @@
                 }
                 document.getElementById("adicionarTarefa").addEventListener("click", adicionarItem)
         </script>
-
-
-
     </body>
     </html>
