@@ -4,7 +4,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 
-public class Main {
+public class MainTeste {
     public static void main(String[] args) {
         Pessoa pessoa1 = new Pessoa("joao", "123", "919182");
         Funcionario funcionario1 = new Funcionario("professor", "123", "pedro", "123", "91299");
@@ -19,17 +19,8 @@ public class Main {
         texto.append(aluno1.saudacao()).append("\n");
         texto.append(funcionario1.saudacao()).append("\n");
         texto.append(professor1.saudacao()).append("\n");
-        String nome = "";
-            while (!nome.matches("^[a-zA-Z]+$")) {
-                nome = JOptionPane.showInputDialog("Digite um nome");
-            if (nome != ("^[a-zA-Z]+$")){
-                System.err.println("Digite apenas números para seu nome");
-                nome = JOptionPane.showInputDialog("Nome deve ser escrito apenas com letras");
-            } else {
-                break;
-            }
-        }
 
+        String nome = JOptionPane.showInputDialog("Digite um número");
         JOptionPane.showMessageDialog(null, "ola " + nome);
 
         JFrame frame = new JFrame("JANELA ");
