@@ -16,5 +16,7 @@ public class maior {
         } else {
             System.out.println("O "+ num02 + " é o maior numero");
         }
+        num1.close();
+        num2.close();
     }
 }

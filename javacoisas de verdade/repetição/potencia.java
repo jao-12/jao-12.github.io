@@ -13,5 +13,7 @@ public class potencia {
 
         double potencia = Math.pow(num01, num02); 
         System.out.println(potencia);
+        num1.close();
+        num2.close();
     }
 }

@@ -9,6 +9,7 @@ public class multiplos {
 
         for (int i = 1; i <= 600; i += 6) {
             System.out.println(num * i);
+        scanner.close();
         }
     }
 }

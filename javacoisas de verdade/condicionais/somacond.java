@@ -14,5 +14,6 @@ public class somacond {
         } else {
             System.out.println("A subtração é "+(a - b));
         }
+        scanner.close();
     }
 }

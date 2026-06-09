@@ -10,5 +10,6 @@ public class extenso {
         int num = scanner.nextInt();
 
         System.out.println(NumeroPorExtenso.get(num));
+        scanner.close();
     }
 }

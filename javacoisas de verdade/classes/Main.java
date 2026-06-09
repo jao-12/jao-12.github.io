@@ -6,6 +6,26 @@ import javax.swing.JTextArea;
 
 public class Main {
     public static void main(String[] args) {
+        String nome = null;
+        try{
+        nome = JOptionPane.showInputDialog("Qual seu nome");
+        }
+        catch (RuntimeException e){
+            System.out.println(e.getMessage());
+        }
+        String cpf = null;
+        try {
+            cpf = JOptionPane.showInputDialog("Digite seu cppf");
+        } catch (RuntimeException e2) {
+            System.out.println(e2.getMessage());
+        }
+        String fone = null;
+        try {
+            fone = JOptionPane.showInputDialog("Digite seu número de telefone");
+        } catch (RuntimeException e3) {
+            System.out.println(e3.getMessage());
+        }
+        Pessoa pessoa2 = new Pessoa(nome, nome, nome);
         Pessoa pessoa1 = new Pessoa("joao", "123", "919182");
         Funcionario funcionario1 = new Funcionario("professor", "123", "pedro", "123", "91299");
         Aluno aluno1 = new Aluno("kaique", "123323", "19238", "25");
@@ -19,18 +39,7 @@ public class Main {
         texto.append(aluno1.saudacao()).append("\n");
         texto.append(funcionario1.saudacao()).append("\n");
         texto.append(professor1.saudacao()).append("\n");
-        String nome = "";
-            while (!nome.matches("^[a-zA-Z]+$")) {
-                nome = JOptionPane.showInputDialog("Digite um nome");
-            if (nome != ("^[a-zA-Z]+$")){
-                System.err.println("Digite apenas números para seu nome");
-                nome = JOptionPane.showInputDialog("Nome deve ser escrito apenas com letras");
-            } else {
-                break;
-            }
-        }
-
-        JOptionPane.showMessageDialog(null, "ola " + nome);
+        texto.append(pessoa1.saudacao()).append("\n");
 
         JFrame frame = new JFrame("JANELA ");
         JTextArea area = new JTextArea(texto.toString());

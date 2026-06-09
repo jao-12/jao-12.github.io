@@ -7,5 +7,6 @@ public class saudação {
         System.out.println("Digite seu nome");
         String nome = scanner.nextLine();
         System.out.println("Bom dia, " + nome);
+        scanner.close();
     }
 }

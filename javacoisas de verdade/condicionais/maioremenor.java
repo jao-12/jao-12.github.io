@@ -38,6 +38,9 @@ public class maioremenor {
 
 
             System.out.println("O maior número é " + maior + " e o menor número é " + menor);
+        num1.close();
+        num2.close();
+        num3.close();
     }
     
 }

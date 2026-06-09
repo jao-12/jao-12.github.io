@@ -50,6 +50,11 @@ public class crescente {
         System.out.println("A ordem é: " + menor + " " + meio + " " + maior);
 
 
+        num1.close();
+        num2.close();
+        num3.close();
+
+
         
     }
     

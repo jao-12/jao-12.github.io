@@ -16,5 +16,7 @@ public class multiplosde3 {
                 System.out.println(soma);
             }
         }
+        primnum.close();
+        secnum.close();
     }
 }

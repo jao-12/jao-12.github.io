@@ -12,5 +12,6 @@ public class resto {
         int b = scanner.nextInt();
 
         System.out.println("O resto da divisão entre os numeros é " + (a % b));
+        scanner.close();
     }
 }

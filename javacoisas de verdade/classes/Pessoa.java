@@ -4,6 +4,15 @@ class Pessoa{
     String fone;
 
     public Pessoa(String nome, String cpf, String fone){
+        if (!nome.matches("[a-zA-Z]+")){
+            throw new RuntimeException("Nome deve ser apenas letras");
+        }
+        else if (!cpf.matches("\\d+")){
+            throw new RuntimeException("CPF deve conter apenas dígitos");
+        }
+        else if (!fone.matches("\\d+")){
+            throw new RuntimeException("Telefone deve conter apenas dígitos");
+        }
         this.nome = nome;
         this.cpf = cpf;
         this.fone = fone;

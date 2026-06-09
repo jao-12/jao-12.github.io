@@ -19,5 +19,6 @@ public class tabuada {
     for (int i = 1; i <= 10; i++) {
         System.out.println(num - i);
     }
+    scanner.close();
     }
 }
