@@ -1,0 +1,78 @@
+    <!DOCTYPE html>
+    <html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        
+        <center><h1>Lista de tarefas</h1></center>
+        <input type="text" id="tarefa">
+        <button id="adicionarTarefa">adicionar</button>
+        <ul id="lista" class="minha-lista">
+        </ul>
+        <style>
+        .minha-lista {
+        display: flex;
+        flex-direction: column; /* deixa os itens empilhados verticalmente */
+        gap: 8px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        color: red;
+        }
+    </style>
+        <style>
+        .minha-lista li { cursor: pointer; }
+
+        .minha-lista li.gr  {
+            color: green;
+            text-decoration: line-through;
+        }
+
+</style>
+        <p>total de tarefas: <span id="contarTarefas">0</span></p>
+        <script>
+            const lista = document.getElementById("lista");
+            const contador = document.getElementById("contarTarefas");
+
+            function atualizarContagem() {
+                contador.textContent = lista.children.length;
+            }
+
+            function adicionarItem() {
+                var inputValor = document.getElementById("tarefa").value;
+                if (inputValor.trim() === "") return;
+
+                var novoItem = document.createElement("li");
+                novoItem.textContent = inputValor;
+
+                const btnRemover = document.createElement("button");
+                btnRemover.textContent = "apagar";
+                btnRemover.onclick = function(e) {
+                    e.stopPropagation();
+                    this.parentNode.remove();
+                    atualizarContagem();
+                };
+
+                novoItem.appendChild(btnRemover);
+                lista.appendChild(novoItem);
+                atualizarContagem();
+                document.getElementById("tarefa").value = "";
+            }
+
+            document.getElementById("adicionarTarefa").addEventListener("click", adicionarItem);
+
+            lista.addEventListener('click', function(event){
+                const item = event.target.closest('li');
+                if (!item) return;
+                if (item.classList.contains('green')) {
+                    item.classList.remove('green');
+                } else {
+                    item.classList.add('green');
+                }
+            });
+        </script>
+    </body>
+    </html>
