@@ -14,24 +14,18 @@
         </ul>
         <style>
         .minha-lista {
-        display: flex;
-        flex-direction: column; /* deixa os itens empilhados verticalmente */
-        gap: 8px;
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        color: red;
+            display: flex;
+            flex-direction: column; /* deixa os itens empilhados verticalmente */
+            gap: 8px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
         }
+
+        .minha-lista li { cursor: pointer; color: red; padding: 4px 6px; }
+        .minha-lista li.green { color: green; text-decoration: line-through; }
+        .minha-lista button { margin-left: 8px; }
     </style>
-        <style>
-        .minha-lista li { cursor: pointer; }
-
-        .minha-lista li.gr  {
-            color: green;
-            text-decoration: line-through;
-        }
-
-</style>
         <p>total de tarefas: <span id="contarTarefas">0</span></p>
         <script>
             const lista = document.getElementById("lista");
@@ -49,6 +43,7 @@
                 novoItem.textContent = inputValor;
 
                 const btnRemover = document.createElement("button");
+                btnRemover.type = 'button';
                 btnRemover.textContent = "apagar";
                 btnRemover.onclick = function(e) {
                     e.stopPropagation();
@@ -67,9 +62,10 @@
             lista.addEventListener('click', function(event){
                 const item = event.target.closest('li');
                 if (!item) return;
-                if (item.classList.contains('green')) {
-                    item.classList.remove('green');
-                } else {
+                if (event.target.tagName === 'BUTTON') return;
+                const alreadyGreen = item.classList.contains('green');
+                Array.from(lista.children).forEach(li => li.classList.remove('green'));
+                if (!alreadyGreen) {
                     item.classList.add('green');
                 }
             });
